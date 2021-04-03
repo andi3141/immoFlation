@@ -298,4 +298,8 @@ end
 
 
 
-run_server(app, "127.0.0.1", 8050, debug=true)
+#run_server(app, "127.0.0.1", 8050, debug=true)
+
+# for heroku
+port = parse(Int64, ENV["PORT"]);
+run_server(app, "0.0.0.0", port)
